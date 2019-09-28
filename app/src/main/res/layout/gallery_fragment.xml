@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_800"
+    tools:context=".ui.GalleryFragment">
+
+    <LinearLayout
+        android:id="@+id/fgal_empty_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/gallery_empty_padding"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/fgal_empty_anim"
+            android:layout_width="@dimen/gallery_empty_anim_size"
+            android:layout_height="@dimen/gallery_empty_anim_size"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="lottie/gallery_empty.json"
+            app:lottie_loop="true" />
+
+        <TextView
+            android:id="@+id/fgal_empty_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/gallery_empty_spacing"
+            android:gravity="center"
+            android:text="@string/gallery_empty_label"
+            android:textStyle="bold"
+            android:textSize="@dimen/gallery_empty_label_spacing"
+            style="@style/ShadowedTextView"/>
+
+    </LinearLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/fgal_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.atar.galeria.ui.misc.GalleryRecyclerView
+            android:id="@+id/fgal_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Galeria</string>
+    <string name="action_settings">Settings</string>
+    <string name="likes">Likes</string>
+    <string name="views">Views</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="gallery_empty_label">No photos at the moment, swipe down to refresh!</string>
+    <string name="gallery_no_network_label">Something went wrong, please check your network connection</string>
+    <string name="photo_label">Photo</string>
+    <string name="refresh">Refresh</string>
+    <string name="width">Width</string>
+    <string name="height">Height</string>
+    <string name="aspect_ratio">Aspect Ratio</string>
+    <string name="date_prefix">Uploaded on</string>
+    <string name="px">px</string>
+    <string name="retry">Retry</string>
+</resources>
