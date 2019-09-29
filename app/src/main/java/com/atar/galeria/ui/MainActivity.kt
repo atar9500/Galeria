@@ -10,6 +10,11 @@ import com.atar.galeria.ui.misc.NavigateEvent
 import com.atar.galeria.ui.misc.SingleEvent
 
 import kotlinx.android.synthetic.main.activity_main.*
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -51,6 +56,11 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         mNavController.removeOnDestinationChangedListener(mNavigationListener)
         super.onDestroy()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     /**
