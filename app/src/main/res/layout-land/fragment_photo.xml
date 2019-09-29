@@ -26,7 +26,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/single_photo_details_spacing"
-        android:drawableStart="@drawable/ic_like_emtpy"
         android:drawablePadding="@dimen/photo_view_action_icon_spacing"
         android:gravity="center_vertical"
         android:textColor="@color/red_500"

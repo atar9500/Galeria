@@ -179,7 +179,7 @@ public class PhotoFragment extends Fragment {
     @SuppressLint("SetTextI18n")
     private void updateLikeCounter(int likes, boolean isLiked) {
         mLikesCount.setText((likes + (isLiked ? 1 : 0)) + " " + getResources().getString(R.string.likes));
-        int likedIconRes = isLiked ? R.drawable.ic_like_full : R.drawable.ic_like_emtpy;
+        int likedIconRes = isLiked ? R.drawable.ic_like_full : R.drawable.ic_like_empty;
         mLikesCount.setCompoundDrawablesRelativeWithIntrinsicBounds(likedIconRes, 0, 0, 0);
     }
 

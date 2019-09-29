@@ -22,8 +22,6 @@ import com.atar.galeria.ui.misc.ListDivider;
 import com.atar.galeria.utils.PhotoHelper;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
-import java.util.List;
-
 public class PhotoDetailsDialogFragment extends BottomSheetDialogFragment {
 
     public static final String TAG = PhotoDetailsDialogFragment.class.getSimpleName();

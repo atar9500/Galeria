@@ -43,7 +43,7 @@ class GalleryFragment : Fragment() {
             PhotosFetchStatus.SUCCESS -> {
                 fgal_refresh.isRefreshing = false
                 fgal_empty_anim.setAnimation(Constants.GALLERY_EMPTY_ANIMATION)
-                fgal_empty_label.text = getString(com.atar.galeria.R.string.gallery_empty_label)
+                fgal_empty_label.text = getString(R.string.gallery_empty_label)
             }
             PhotosFetchStatus.FETCHING -> {
                 fgal_refresh.isRefreshing = true
@@ -51,7 +51,7 @@ class GalleryFragment : Fragment() {
             PhotosFetchStatus.FAILED -> {
                 fgal_refresh.isRefreshing = false
                 fgal_empty_anim.setAnimation(Constants.GALLERY_EMPTY_ANIMATION)
-                fgal_empty_label.text = getString(com.atar.galeria.R.string.gallery_empty_label)
+                fgal_empty_label.text = getString(R.string.gallery_empty_label)
 
                 Snackbar.make(view!!, R.string.gallery_empty_label, Snackbar.LENGTH_INDEFINITE)
                     .setAction(R.string.retry) {
@@ -93,7 +93,7 @@ class GalleryFragment : Fragment() {
             arguments.putString(PhotoFragment.ARG_PHOTO_URL, photoUrl)
 
             val galleryExitTransition = TransitionInflater.from(context)
-                .inflateTransition(com.atar.galeria.R.transition.gallery_exit_transition)
+                .inflateTransition(R.transition.gallery_exit_transition)
             galleryExitTransition.duration = Constants.GALLERY_EXIT_TRANSITION_DURATION
             galleryExitTransition.startDelay = Constants.GALLERY_EXIT_TRANSITION_DELAY_DURATION
             galleryExitTransition.excludeTarget(viewToExclude, true)
@@ -101,7 +101,7 @@ class GalleryFragment : Fragment() {
 
             mViewModel.setNavigateEvent(
                 NavigateEvent(
-                    com.atar.galeria.R.id.action_galleryFragment_to_photoFragment,
+                    R.id.action_galleryFragment_to_photoFragment,
                     arguments,
                     extras
                 )
@@ -128,7 +128,7 @@ class GalleryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         setHasOptionsMenu(true)
-        return inflater.inflate(com.atar.galeria.R.layout.gallery_fragment, container, false)
+        return inflater.inflate(R.layout.gallery_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -141,7 +141,7 @@ class GalleryFragment : Fragment() {
         fgal_refresh.setOnRefreshListener(mOnRefreshListener)
 
         val gridSpacing =
-            resources.getDimensionPixelOffset(com.atar.galeria.R.dimen.photos_list_spacing)
+            resources.getDimensionPixelOffset(R.dimen.photos_list_spacing)
         fgal_list.setEmptyView(fgal_empty_view)
         val orientation = resources.configuration.orientation
         var gridSize = ROWS_PORTRAIT
@@ -164,13 +164,13 @@ class GalleryFragment : Fragment() {
 
     @Override
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(com.atar.galeria.R.menu.gallery_fragment_menu, menu)
+        inflater.inflate(R.menu.gallery_fragment_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            com.atar.galeria.R.id.fgal_menu_refresh -> {
+            R.id.fgal_menu_refresh -> {
                 mViewModel.fetchPhotos()
                 true
             }

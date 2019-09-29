@@ -97,7 +97,7 @@ class PhotosAdapter(clickListener: PhotoClickListener) :
                 photo.views ?: 0
             )} ${itemView.resources.getString(R.string.views)}"
 
-            var likedIconRes = R.drawable.ic_like_emtpy
+            var likedIconRes = R.drawable.ic_like_empty
             if (liked) {
                 likedIconRes = R.drawable.ic_like_full
             }
